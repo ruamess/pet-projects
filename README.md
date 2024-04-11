@@ -1,5 +1,6 @@
-https://www.figma.com/file/XIYVl8ICFkdl3HJZcc8o8B/%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5?type=design&node-id=0-1&mode=design&t=Qqv0wTkbPhyuHsOo-0
-https://nubersss.notion.site/React-Developer-Next-js-09c47b36c56447329399c044831c7ef9
+Design: https://www.figma.com/file/XIYVl8ICFkdl3HJZcc8o8B/%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5?type=design&node-id=0-1&mode=design&t=Qqv0wTkbPhyuHsOo-0
+
+TZ: https://nubersss.notion.site/React-Developer-Next-js-09c47b36c56447329399c044831c7ef9
 
 
 
