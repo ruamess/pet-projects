@@ -1,18 +1,33 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'background': "url('/Background.svg')",
+      },
+      fontFamily: {
+        'nunito': ['Nunito', 'sans'],
+      },
       colors: {
-        bg: '#222222',
-        acc: '#777777',
-        acc2: '#D9D9D9'
-      }
+        'blue-light': '#8FB2F5',
+        'gray-900': '#13131A',
+        'gray-800': '#16161F',
+        'gray-700': '#1C1C27',
+        'gray-600': '#22222F',
+        'gray-500': '#3B3B54',
+        'gray-400': '#7F7F98',
+        'gray-300': '#ABABC4',
+        'gray-200': '#BFBFD4',
+        'gray-100': '#FAFAFA'
+      },
     },
+    // screens: {
+    //   'custom': { 'max': '616px' }, // Настройка собственного размера экрана
+    // },
   },
   plugins: [],
-};
+}
