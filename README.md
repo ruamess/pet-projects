@@ -1,6 +1,6 @@
 # React + Vite
 
-In scr/components/WelcomeScreen/CityItem.jsx change the const API_KEY to your openweather.com api key to use react app correctly
+<strong>In scr/components/WelcomeScreen/CityItem.jsx change the const API_KEY to your openweather.com api key to use react app correctly</strong>
 
 
 
