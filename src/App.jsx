@@ -7,15 +7,17 @@
 
 import WeatherScreen from "./screens/WeatherScreen";
 import WelcomeScreen from "./screens/WelcomeScreen";
-import { observer } from 'mobx-react-lite';
+import { Route, Routes } from 'react-router-dom';
 
-const App = observer(() => {
+const App = () => {
   return (
     <div className="app overflow-y-auto h-64 bg-background min-h-screen">
-      {/* <WelcomeScreen /> */}
-      {/* <WeatherScreen /> */}
+      <Routes>
+        <Route path='/' element={<WelcomeScreen />} />
+        <Route path='/info' element={<WeatherScreen />} />
+      </Routes>
     </div>
   )
-});
+}
 
 export default App;

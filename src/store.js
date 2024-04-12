@@ -1,12 +1,10 @@
 import { makeAutoObservable } from "mobx"
 
 class Store {
+
 	spinnerVisibility = false
 	inputValue = ''
-
-
-
-	cities = ['Moscow', 'Москва', 'Shymkent', 'Шымкент', 'Шуаньцзы', 'Шлюха', 'Almaty', 'Алмата', 'Astana', 'Астана', 'Sanct Peter', 'Санкт-Питербург']
+	cities = ['Moscow', 'Москва', 'Shymkent', 'Шымкент', 'Almaty', 'Astana', 'Астана', 'Saint Petersburg', 'Питербург']
 
 	foundCities = []
 
@@ -20,6 +18,20 @@ class Store {
 
 	spinnerHidden() {
 		this.spinnerVisibility = false
+	}
+
+	getCurrentFullDate(offsetInSeconds) {
+		return new Intl.DateTimeFormat('en-US', {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: '2-digit',
+			hour: 'numeric',
+			minute: 'numeric',
+			second: 'numeric',
+			hour12: false,
+			timeZone: 'UTC'
+		}).format(new Date(Date.now() + offsetInSeconds * 1000));
 	}
 
 	searchCity() {
@@ -53,27 +65,6 @@ class Store {
 		}
 	}
 
-	getWeatherInfo(city) {
-		this.inputValue = city
-		this.spinnerVisible()
-		fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=46dfd9dccebddf5a434ffa1510f7f02c`)
-			.then(response => {
-				if (!response.ok) {
-					throw new Error('Network response was not ok');
-				}
-				return response.json();
-			})
-			.then(data => {
-				console.log(data)
-				localStorage.setItem('cityInfo', JSON.stringify(data))
-				localStorage.setItem('cityName', data.city.name)
-				this.spinnerHidden()
-				this.foundCities = []
-			})
-			.catch(error => {
-				console.error('There was a problem with the fetch operation:', error);
-			})
-	}
 }
 
 

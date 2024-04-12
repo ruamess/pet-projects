@@ -24,10 +24,7 @@ export default {
         'gray-200': '#BFBFD4',
         'gray-100': '#FAFAFA'
       },
-    },
-    // screens: {
-    //   'custom': { 'max': '616px' }, // Настройка собственного размера экрана
-    // },
+    }
   },
   plugins: [],
 }
