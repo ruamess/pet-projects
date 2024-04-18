@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+Для отклика на эту вакансию необходимо ответить на вопрос работодателя.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ряд вопросов, на которые нет правильных ответов. С их помощью мы надеемся понять вашу способность мыслить, анализировать и добывать информацию, узнать вас и ваш бэкграунд получше. 
 
-Currently, two official plugins are available:
+Вопрос №1:
+Был ли у вас опыт веб-разработки? Приложите ссылку на репозиторий с вашим веб-проектом, если возможно.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Вопрос №2: 
+Выполните практическое задание. Описание по ссылке: https://docs.google.com/document/d/1X9zMnAAU9vvEzdYtSEeeram8Kur5o-py5ChKlK5TIa8/edit#
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Отклики без выполненного задания не будут рассмотрены.
 
-- Configure the top-level `parserOptions` property like this:
+Пожалуйста, не пишите код внутри формы ответов, разместите его на Github и приложите ссылку. Если в задании что-то непонятно, опишите возникшие вопросы и сделанные предположения. Например, в комментариях в коде.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Вопрос №3: 
+Готовы ли выйти на фуллтайм (удаленно/офис/гибрид) в случае успешного завершения стажировки через 3-4 месяца?
+
+
+Вы можете продублировать ответы на вопросы в сопроводительном письме - это поможет нам быстрее обработать ваш отклик :) 
