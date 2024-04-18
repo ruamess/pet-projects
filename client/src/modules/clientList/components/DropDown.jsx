@@ -9,18 +9,19 @@ const DropDown = ({ status }) => {
 		<div className="flex items-center relative">
 			<button
 				onClick={() => dropDownVisible ? setDropdownVisible(false) : setDropdownVisible(true)}
-				className="bg-gray-500 hover:bg-gray-400 duration-500 w-28 p-1"
+				className="bg-gray-500 hover:bg-gray-400 duration-500 w-24 p-1 text-wrap"
 			>
 				{status}
 			</button>
 			{dropDownVisible
 				?
-				<div className="flex-col absolute top-8 duration-500">
+				<div className="flex-col absolute top-14 duration-500 z-10">
 					<Variant text={'Отказ'} />
 					<Variant text={'В работе'} />
 					<Variant text={'Сделка закрыта'} />
 				</div>
-				: null
+				:
+				null
 			}
 		</div>
 

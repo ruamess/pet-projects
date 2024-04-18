@@ -1,5 +1,7 @@
+
+import { Auth } from "./modules/auth"
+import { Toaster } from 'sonner'
 import Home from "./pages/Home"
-import SignIn from "./pages/SignIn"
 
 
 function App() {
@@ -7,7 +9,8 @@ function App() {
 
   return (
     <div className="min-w-screen min-h-screen bg-gray-800 flex items-center justify-center text-white p-10">
-      {/* <SignIn /> */}
+      {/* <Auth /> */}
+      <Toaster position="top-center" />
       <Home />
     </div>
   )

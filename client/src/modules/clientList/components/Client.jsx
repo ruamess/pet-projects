@@ -1,12 +1,12 @@
+import ClientInfo from "./ClientInfo"
+import DropDown from "./DropDown"
 
-
-const Client = ({ fullName, birthday, IIN }) => {
+const Client = ({ fullName, IIN, birthday, status }) => {
 
 	return (
-		<div className="flex items-center gap-6">
-			<span>{fullName}</span>
-			<span>{birthday}</span>
-			<span>{IIN}</span>
+		<div className="flex gap-10 border p-2">
+			<ClientInfo fullName={fullName} IIN={IIN} birthday={birthday} />
+			<DropDown status={status} />
 		</div>
 	)
 }

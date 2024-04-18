@@ -10,20 +10,43 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.post('/auth', async (req, res) => {
+app.post('/logIn', async (req, res) => {
 	try {
-		const { full_name, password } = req.body
-		if (!full_name || !password) return res.status(400).json('Введите полные данные')
-		const check = await User.findOne({ where: { full_name } })
-		if (check) {
-			if (check.password != password) return res.status(400).json('Не верный пароль')
-			else if (check.password == password) return res.status(200).json({ full_name, password })
+		const { login, password } = req.body
+		if (!login || !password) {
+			return res.status(400).json('Заполните поля')
 		}
-		await User.create({ full_name, password })
-		return res.status(201).json({ full_name, password })
+		const check = await User.findOne({ where: { login } })
+		if (check) {
+			if (check.password != password) {
+				return res.status(400).json('Не верный пароль')
+			}
+		}
+		else if (!check) {
+			return res.status(400).json('Пользователь не найден')
+		}
+		return res.status(201).json({ full_name: check.full_name, login, password })
 	} catch (e) {
 		console.log(e)
-		return res.status(400).json('Error')
+		return res.status(400).json('Непредвиденная ошибка')
+	}
+})
+
+app.post('/signIn', async (req, res) => {
+	try {
+		const { login, full_name, password } = req.body
+		if (!full_name || !password || !login) {
+			return res.status(400).json('Заполните все поля')
+		}
+		const check = await User.findOne({ where: { login } })
+		if (check) {
+			return res.status(400).json('Пользователь с таким логином уже существует')
+		}
+		await User.create({ full_name, login, password })
+		return res.status(201).json({ full_name, login, password })
+	} catch (e) {
+		console.log(e)
+		return res.status(400).json('Непредвиденная ошибка')
 	}
 })
 
@@ -39,7 +62,7 @@ app.post('/addClient', async (req, res) => {
 		return res.status(200).json({ surname, name, patronymic, birthday, IIN, rp_full_name, status })
 	} catch (e) {
 		console.log(e)
-		return res.status(400).json('Error')
+		return res.status(400).json('Непредвиденная ошибка')
 	}
 })
 
@@ -50,7 +73,7 @@ app.get('/getClients', async (req, res) => {
 		return res.status(200).json(clients)
 	} catch (e) {
 		console.log(e)
-		return res.status(400).json('Error1224432')
+		return res.status(400).json('Непредвиденная ошибка')
 	}
 })
 

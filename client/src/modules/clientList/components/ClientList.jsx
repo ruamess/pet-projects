@@ -5,13 +5,11 @@ import DropDown from "./DropDown"
 const ClientList = () => {
 
 	return (
-		<div>
-			<ui>
-				<li className="flex gap-10">
-					<Client fullName={'Андрей ПИдор Иванович'} IIN={12124124124} birthday={'01.03.1991'} />
-					<DropDown status={'Не работает'} />
-				</li>
-			</ui>
+		<div className="flex flex-col gap-5">
+			<Client fullName='Антон Палыч Чехов' IIN={112344111111231} birthday='10.02.1980' status='Не работает' />
+			<Client fullName='Антон Палыч Чехов' IIN={112344111111231} birthday='10.02.1980' status='Не работает' />
+			<Client fullName='Антон Палыч Чехов' IIN={112344111111231} birthday='10.02.1980' status='Не работает' />
+			<Client fullName='Антон Палыч Чехов' IIN={112344111111231} birthday='10.02.1980' status='Не работает' />
 		</div>
 	)
 }
