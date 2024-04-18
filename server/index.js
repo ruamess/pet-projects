@@ -50,7 +50,7 @@ app.get('/getClients', async (req, res) => {
 		return res.status(200).json(clients)
 	} catch (e) {
 		console.log(e)
-		return res.status(400).json('Error')
+		return res.status(400).json('Error1224432')
 	}
 })
 
