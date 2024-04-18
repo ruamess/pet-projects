@@ -10,13 +10,15 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.post('/signIn', async (req, res) => {
+app.post('/auth', async (req, res) => {
 	try {
 		const { full_name, password } = req.body
 		if (!full_name || !password) return res.status(400).json('Введите полные данные')
 		const check = await User.findOne({ where: { full_name } })
-		if (check) return res.status(400).json('Пользователь с там ФИО уже существует')
-
+		if (check) {
+			if (check.password != password) return res.status(400).json('Не верный пароль')
+			else if (check.password == password) return res.status(200).json({ full_name, password })
+		}
 		await User.create({ full_name, password })
 		return res.status(201).json({ full_name, password })
 	} catch (e) {
@@ -25,29 +27,16 @@ app.post('/signIn', async (req, res) => {
 	}
 })
 
-app.post('/logIn', async (req, res) => {
-	try {
-		const { full_name, password } = req.body
-		const check = await User.findOne({ where: { full_name } })
-		if (!check) return res.status(400).json('Пользователя не существует')
-		if (check.password != password) return res.status(400).json('Неверный пароль')
-		return res.status(200).json({ full_name, password })
-	} catch (e) {
-		console.log(e)
-		return res.status(400).json('Error')
-	}
-})
-
 app.post('/addClient', async (req, res) => {
 	try {
-		const { surname, name, patronymic, birthday, ITN, rp_full_name, status } = req.body
+		const { surname, name, patronymic, birthday, IIN, rp_full_name, status } = req.body
 		if (!surname || !name || !patronymic || !birthday || !ITN || !rp_full_name) {
 			return res.status(400).json('Заполните все поля')
 		}
-		const check = await Client.findOne({ where: { ITN } })
+		const check = await Client.findOne({ where: { IIN } })
 		if (check) return res.status(400).json('Клиент с таким ИНН уже существует.')
-		await Client.create({ surname, name, patronymic, birthday, ITN, rp_full_name, status })
-		return res.status(200).json({ surname, name, patronymic, birthday, ITN, rp_full_name, status })
+		await Client.create({ surname, name, patronymic, birthday, IIN, rp_full_name, status })
+		return res.status(200).json({ surname, name, patronymic, birthday, IIN, rp_full_name, status })
 	} catch (e) {
 		console.log(e)
 		return res.status(400).json('Error')
@@ -56,7 +45,7 @@ app.post('/addClient', async (req, res) => {
 
 app.get('/getClients', async (req, res) => {
 	try {
-		const { full_name } = req.body
+		const { full_name } = req.query
 		const clients = await Client.findAll({ where: { rp_full_name: full_name } })
 		return res.status(200).json(clients)
 	} catch (e) {

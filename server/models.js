@@ -7,7 +7,7 @@ const Client = sequelize.define('client', {
 	name: { type: DataTypes.STRING, allowNul: false },
 	patronymic: { type: DataTypes.STRING, allowNul: false },
 	birthday: { type: DataTypes.DATE, allowNull: false },
-	ITN: { type: DataTypes.INTEGER, allowNul: false },
+	IIN: { type: DataTypes.INTEGER, allowNul: false },
 	rp_full_name: { type: DataTypes.STRING, allowNul: false },
 	status: { type: DataTypes.STRING, defaultValue: 'Не в работе' }
 
