@@ -3,7 +3,7 @@ import ProgressText from "./ProgressText"
 import ProgressLine from "./ProgressLine"
 
 
-export default function Progress({ goal, days }) {
+const Progress = ({ goal, days }) => {
 
 	const progress = Math.round((days / goal) * 100)
 
@@ -14,3 +14,5 @@ export default function Progress({ goal, days }) {
 		</div>
 	)
 }
+
+export default Progress

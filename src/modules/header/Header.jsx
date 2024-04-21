@@ -1,6 +1,8 @@
 import { observer } from "mobx-react-lite";
-import Progress from "../progress/Progress";
-import Title from "./Title";
+
+import Title from "./info/Title";
+import Progress from "./progress/Progress";
+
 
 
 const Header = observer(({ title, goal, days }) => {

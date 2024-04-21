@@ -1,9 +1,9 @@
 import { observer } from "mobx-react-lite"
-import Header from "./header/Header"
 import NoHabbitInfo from "./NoHabbitInfo"
 import RemoveHabbit from "./RemoveHabbit"
 import store from "@/modules/store"
 import { CommentCreator, CommentDisplay } from "../../comments"
+import { Header } from "@/modules/header"
 
 
 

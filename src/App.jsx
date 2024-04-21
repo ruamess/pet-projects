@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite"
 import { HabbitInfo } from "./modules/habbitInfo"
 import { SideBar } from "./modules/sideBar"
-import { Modal } from "./modules/addHabbitModal"
+import { Modal } from "./modules/habbitAdd"
 import store from "./modules/store"
 import './scrollbar.css'
 

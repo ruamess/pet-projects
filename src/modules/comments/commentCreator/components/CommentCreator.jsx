@@ -1,8 +1,10 @@
-import CreateButton from "./CreateButton"
+import CreateButton from "@/components/CreateButton"
 import TextInput from "./TextInput"
 import Day from "../../components/Day"
 import CommentWrapper from "../../components/CommentWrapper"
 import { observer } from "mobx-react-lite"
+import { createComment } from "../helpers"
+
 
 const CommentCreator = observer(({ index }) => {
 
@@ -11,7 +13,7 @@ const CommentCreator = observer(({ index }) => {
 		<CommentWrapper>
 			<Day index={index} />
 			<TextInput />
-			<CreateButton />
+			<CreateButton onClick={() => createComment()} text='Ok' />
 		</CommentWrapper>
 	)
 })
