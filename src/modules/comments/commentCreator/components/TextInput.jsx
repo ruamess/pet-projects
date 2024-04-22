@@ -14,7 +14,7 @@ const TextInput = observer(() => {
 		<div className="w-full ">
 			<InputWrapper>
 				<Icon />
-				<CustomInput placeholder="Comment" value={store.inputValue} onKeyDown={onPressEnter} onChange={inputChange} />
+				<CustomInput placeholder="Comment" value={store.commentText} onKeyDown={onPressEnter} onChange={inputChange} />
 			</InputWrapper >
 		</div>
 	)

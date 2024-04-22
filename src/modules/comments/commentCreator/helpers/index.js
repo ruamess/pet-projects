@@ -3,14 +3,14 @@ import store from "@/modules/store"
 
 
 const createComment = () => {
-	const text = store.inputValue
+	const text = store.commentText
 	store.habbitList[store.habbitIndex].days.push({ text: text })
-	store.updateInputValue('')
+	store.updateCommentText('')
 }
 
 
 const inputChange = (event) => {
-	store.updateInputValue(event.target.value)
+	store.updateCommentText(event.target.value)
 }
 
 

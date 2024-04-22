@@ -3,7 +3,10 @@ import { observable, autorun } from 'mobx';
 const store = observable({
 	habbitIndex: JSON.parse(localStorage.getItem('habbitIndex')) || 0,
 	habbitList: JSON.parse(localStorage.getItem('habbitList')) || [{}],
-	inputValue: localStorage.getItem('inputValue') || '',
+	commentText: localStorage.getItem('commentText') || '',
+	habbitName: '',
+	habbitGoal: '',
+	habbitIcon: '',
 	modalVisible: JSON.parse(localStorage.getItem('modalVisible') || false),
 
 
@@ -11,8 +14,17 @@ const store = observable({
 		store.modalVisible == false ? store.modalVisible = true : store.modalVisible = false
 	},
 
-	updateInputValue(inputValue) {
-		store.inputValue = inputValue
+	updateHabbitIcon(habbitNewIcon) {
+		store.habbitIcon = habbitNewIcon
+		console.log(this.habbitIcon)
+	},
+
+	updateHabbitName(habbitNewName) {
+		store.habbitName = habbitNewName
+	},
+
+	updateHabbitGoal(habbitNewGoal) {
+		store.habbitGoal = habbitNewGoal
 	},
 
 	updateHabbitList(newHabbitList) {
@@ -30,7 +42,7 @@ const store = observable({
 autorun(() => {
 	localStorage.setItem('habbitIndex', JSON.stringify(store.habbitIndex))
 	localStorage.setItem('habbitList', JSON.stringify(store.habbitList))
-	localStorage.setItem('inputValue', store.inputValue)
+	localStorage.setItem('commentTexte', store.commentText)
 	localStorage.setItem('modalVisible', JSON.stringify(store.modalVisible))
 })
 
