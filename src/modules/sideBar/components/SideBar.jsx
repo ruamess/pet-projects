@@ -7,15 +7,15 @@ const SideBar = observer(() => {
 
 
 	return (
-		<aside className="min-w-[160px] bg-ui min-h-screen">
-			<div className="flex flex-col justify-center items-center pt-14">
+		<aside className="min-w-[160px] bg-ui max-h-screen overflow-y-auto scrollBar">
+			<div className="flex flex-col justify-center items-center pt-14 pb-14 gap-24">
 				<Logo />
-				<div className="flex flex-col justify-center items-center mt-28 gap-10">
+				<div className="flex flex-col justify-center items-center gap-10">
 					<HabbitsList />
 					<AddHabbitButton />
 				</div>
 			</div>
-		</aside>
+		</aside >
 	)
 })
 

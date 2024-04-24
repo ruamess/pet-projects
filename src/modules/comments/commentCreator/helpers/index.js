@@ -1,11 +1,17 @@
 import store from "@/modules/store"
-
+import { toast } from 'sonner'
 
 
 const createComment = () => {
 	const text = store.commentText
-	store.habbitList[store.habbitIndex].days.push({ text: text })
-	store.updateCommentText('')
+
+	if (text.trim() == '') {
+		toast.error("Comment cannot be empty")
+	}
+	else {
+		store.habbitList[store.habbitIndex].days.push({ text: text })
+		store.updateCommentText('')
+	}
 }
 
 

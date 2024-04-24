@@ -1,18 +1,23 @@
-const userAnswer = 'https://test.com/'
+// import Logo from "./Logo";
+// import { observer } from "mobx-react-lite";
+// import HabbitsList from "./HabbitsList";
+// import AddHabbitButton from "./AddHabbitButton";
 
-const checkWordPressSite = (url) => {
+// const SideBar = observer(() => {
 
-	const refactoredUrl = url.split('/').splice(0, 3).join('/')
 
-	fetch(`${refactoredUrl}/wp-admin`)
-		.then(response => {
-			if (response.status == 200) console.log('Сайт сделан при помощи WordPress')
-			else console.log('Сайт сделан не при помощи WordPress')
-		})
-		.catch(error => {
-			console.error('Сайт не найден')
-			console.error(error)
-		})
-}
+// 	return (
+// 		<aside className="min-w-[160px] bg-ui max-h-screen overflow-y-auto">
+// 			<div className="flex flex-col justify-center items-center pt-14 pb-14 gap-24">
+// 				<Logo />
+// 				<div className="flex flex-col justify-center items-center gap-10">
+// 					<HabbitsList />
+// 					<AddHabbitButton />
+// 				</div>
+// 			</div>
+// 		</aside >
+// 	)
+// })
 
-checkWordPressSite(userAnswer)
+
+// export default SideBar

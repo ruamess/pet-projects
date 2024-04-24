@@ -1,9 +1,9 @@
 import { InputWrapper } from "@/components"
 import { CustomInput } from "@/components"
 import { CreateButton } from "../../../components"
-import { useState } from "react"
 import store from "../../store"
 import { observer } from "mobx-react-lite"
+import { addNewHabbit } from "../helpers"
 
 
 const ModalForm = observer(() => {
@@ -37,7 +37,11 @@ const ModalForm = observer(() => {
 			</InputWrapper>
 
 			<div className="flex justify-center">
-				<CreateButton text='Add habbit' />
+				<CreateButton onClick={() => addNewHabbit(
+					store.habbitGoal,
+					store.habbitName,
+					store.habbitIcon
+				)} text='Add habbit' />
 			</div>
 
 		</div>

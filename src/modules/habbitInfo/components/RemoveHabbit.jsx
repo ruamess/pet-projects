@@ -9,7 +9,7 @@ const RemoveHabbit = observer(() => {
 		<div className="flex items-center justify-center mt-14">
 			<button onClick={() => removeHabbit()} className="rounded-2xl p-2 bg-[#bd1717] 
 			hover:bg-red-700 font-semibold h-14 duration-500">
-				Delete habbit
+				Remove habbit
 			</button>
 		</div>
 	)

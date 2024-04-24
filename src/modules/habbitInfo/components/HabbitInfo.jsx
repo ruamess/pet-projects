@@ -13,20 +13,27 @@ const HabbitInfo = observer(() => {
 	const habbit = store?.habbitList[store?.habbitIndex]
 
 	return (
-		<div className="w-screen ">
+		<div className="w-screen max-h-screen overflow-y-auto scrollBar ">
 
 			{
 				checkData != undefined || checkData > 0
 					?
 					<div className="w-full h-fit p-20 flex flex-col gap-20">
 						<Header title={habbit.title} goal={habbit.goal} days={habbit.days?.length} />
-						<main className="flex flex-col gap-5">
+						<main className="flex flex-col gap-5 ">
 							{habbit.days?.map((el, index) => <CommentDisplay key={index} index={index} text={el.text} />)}
-							{habbit.days.length < habbit.goal
+							{habbit.days.length >= habbit.goal
 								?
-								<CommentCreator index={habbit.days?.length} />
-								:
 								<RemoveHabbit />
+								:
+								habbit.goal >= 20
+									?
+									<div>
+										<CommentCreator index={habbit.days?.length} />
+										<RemoveHabbit />
+									</div>
+									:
+									<CommentCreator index={habbit.days?.length} />
 							}
 						</main>
 					</div>
