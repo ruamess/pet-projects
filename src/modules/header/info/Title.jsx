@@ -4,12 +4,12 @@ import { observer } from "mobx-react-lite"
 
 const Title = observer(({ title }) => {
 
-	const habbit = store?.habbitList[store?.habbitIndex]
+	const habit = store?.habitList[store?.habitIndex]
 
 	return (
 		<div className="flex items-center gap-10">
-			<span className="text-6xl">{title}</span>
-			{habbit.days.length < habbit.goal ? null : <Completed />}
+			<span className="text-6xl  flex flex-wrap">{title}</span>
+			{habit.days.length < habit.goal ? null : <Completed />}
 		</div>
 	)
 })

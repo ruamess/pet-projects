@@ -1,13 +1,13 @@
 import store from '@/modules/store'
 
-function switchHabbit(id) {
-	store.habbitList.map((el, index) => {
+function switchHabit(id) {
+	store.habitList.map((el, index) => {
 		if (el.id == id) {
-			store.updateHabbitIndex(index)
+			store.updateHabitIndex(index)
 		}
 	})
 }
 
 export {
-	switchHabbit
+	switchHabit
 }

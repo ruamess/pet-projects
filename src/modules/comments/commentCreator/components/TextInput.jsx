@@ -5,16 +5,17 @@ import CustomInput from "@/components/input/CustomInput"
 import Icon from "./Icon"
 import InputWrapper from "@/components/input/InputWrapper"
 
-const TextInput = observer(() => {
 
-
-
+const TextInput = observer(({ ...children }) => {
 
 	return (
 		<div className="w-full ">
 			<InputWrapper>
 				<Icon />
-				<CustomInput placeholder="Comment" value={store.commentText} onKeyDown={onPressEnter} onChange={inputChange} />
+				<CustomInput value={store.commentText}
+					onKeyDown={onPressEnter}
+					onChange={inputChange}
+					{...children} />
 			</InputWrapper >
 		</div>
 	)

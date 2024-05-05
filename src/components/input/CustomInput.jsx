@@ -3,7 +3,7 @@
 const CustomInput = ({ ...children }) => {
 
 	return (
-		<input className="focus:outline-none w-full bg-acc" {...children} />
+		<input className="bg-white dark:bg-acc focus:outline-none w-full" {...children} />
 	)
 }
 

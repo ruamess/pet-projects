@@ -9,7 +9,7 @@ const createComment = () => {
 		toast.error("Comment cannot be empty")
 	}
 	else {
-		store.habbitList[store.habbitIndex].days.push({ text: text })
+		store.habitList[store.habitIndex].days.push({ text: text })
 		store.updateCommentText('')
 	}
 }

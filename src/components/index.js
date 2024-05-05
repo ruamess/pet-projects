@@ -1,13 +1,13 @@
 import InputWrapper from "./input/InputWrapper"
 import CustomInput from "./input/CustomInput"
-import HabbitButtonWrapper from "./habbitButton/HabbitButtonWrapper"
+import HabitButtonWrapper from "./habitButton/HabitButtonWrapper"
 import CreateButton from "./CreateButton"
-import HabbitIcon from "./habbitButton/HabbitIcon"
+import HabitIcon from "./habitButton/HabitIcon"
 
 export {
 	InputWrapper,
 	CustomInput,
-	HabbitIcon,
-	HabbitButtonWrapper,
+	HabitIcon,
+	HabitButtonWrapper,
 	CreateButton
 }

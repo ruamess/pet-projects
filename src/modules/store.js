@@ -1,55 +1,68 @@
 import { observable, autorun } from 'mobx';
 
 const store = observable({
-	habbitIndex: JSON.parse(localStorage.getItem('habbitIndex')) || 0,
-	habbitList: JSON.parse(localStorage.getItem('habbitList')) || [],
+	habitIndex: JSON.parse(localStorage.getItem('habitIndex')) || 0,
+	habitList: JSON.parse(localStorage.getItem('habitList')) || [],
 	commentText: localStorage.getItem('commentText') || '',
-	habbitName: '',
-	habbitGoal: '',
-	habbitIcon: '',
-	modalVisible: JSON.parse(localStorage.getItem('modalVisible') || false),
+	theme: localStorage.getItem('theme') || 'dark',
+	createHabitForm: {
+		name: '',
+		goal: '',
+		icon: '',
+	},
+
+	modals: {
+		settings: false,
+		createHabit: false
+	},
+
+	changeTheme() {
+		store.theme == 'dark' ? store.theme = 'light' : store.theme = 'dark'
+	},
 
 
+	setHabitIcon(newIcon) {
+		store.createHabitForm.icon = newIcon
+		console.log(this.habitIcon)
+	},
 
+	setHabitName(newName) {
+		store.createHabitForm.name = newName
+	},
+
+	setHabitGoal(newGoal) {
+		store.createHabitForm.goal = newGoal
+	},
+
+	setCreateHabitVisibility() {
+		store.modals.createHabit ? store.modals.createHabit = false : store.modals.createHabit = true
+	},
+
+	setSettingsVisibility() {
+		store.modals.settings ? store.modals.settings = false : store.modals.settings = true
+	},
 
 	updateCommentText(commentNewText) {
 		store.commentText = commentNewText
 	},
 
-	updateModalVisible() {
-		store.modalVisible == false ? store.modalVisible = true : store.modalVisible = false
+	updateHabitList(newHabitList) {
+		store.habitList = newHabitList
+		console.log(store.habitList)
 	},
 
-	updateHabbitIcon(habbitNewIcon) {
-		store.habbitIcon = habbitNewIcon
-		console.log(this.habbitIcon)
-	},
-
-	updateHabbitName(habbitNewName) {
-		store.habbitName = habbitNewName
-	},
-
-	updateHabbitGoal(habbitNewGoal) {
-		store.habbitGoal = habbitNewGoal
-	},
-
-	updateHabbitList(newHabbitList) {
-		store.habbitList = newHabbitList
-		console.log(store.habbitList)
-	},
-
-	updateHabbitIndex(newHabitIndex) {
-		store.habbitIndex = newHabitIndex;
-		// console.log(store.habbitIndex)
-		// console.log(store.habbitList[store.habbitIndex])
+	updateHabitIndex(newHabitIndex) {
+		store.habitIndex = newHabitIndex;
+		// console.log(store.HabitIndex)
+		// console.log(store.HabitList[store.HabitIndex])
 	}
 })
 
 autorun(() => {
-	localStorage.setItem('habbitIndex', JSON.stringify(store.habbitIndex))
-	localStorage.setItem('habbitList', JSON.stringify(store.habbitList))
+	localStorage.setItem('habitIndex', JSON.stringify(store.habitIndex))
+	localStorage.setItem('habitList', JSON.stringify(store.habitList))
 	localStorage.setItem('commentText', store.commentText)
-	localStorage.setItem('modalVisible', JSON.stringify(store.modalVisible))
+	localStorage.setItem('theme', store.theme)
 })
 
 export default store

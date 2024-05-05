@@ -3,11 +3,11 @@ const CreateButton = ({ text, ...children }) => {
 
 
 	return (
-		<button className="flex items-center justify-center duration-500 min-w-[160px] h-[50px]
-		 bg-acc2  hover:bg-purple  rounded-2xl"
+		<button className="bg-[#EDECFE] dark:bg-acc2 flex items-center justify-center duration-500 min-w-[160px] h-[50px]
+		dark:hover:bg-purple hover:bg-[#dedeff]  rounded-2xl"
 			{...children}
 		>
-			<span className="text-[#EDECFE] text-lg">
+			<span className="text-purple dark:text-[#EDECFE] text-lg">
 				{text}
 			</span>
 		</button>
